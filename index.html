@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Lelek gantenk</title>  <!-- Font & Icons -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+    body{
+      background:#000;
+      color:#fff;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .container{
+      width:100%;
+      max-width:380px; /* presisi seperti screenshot */
+      text-align:center;
+    }
+
+    /* Avatar */
+    .avatar-box{
+      position:relative;
+      width:120px;
+      height:120px;
+      margin:0 auto 12px;
+    }
+
+    .avatar-box::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:50%;
+      background:conic-gradient(#ff004c,#ff7b00,#ff004c);
+      padding:3px;
+    }
+
+    .avatar{
+      width:100%;
+      height:100%;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid #000;
+      position:relative;
+      z-index:1;
+    }
+
+    /* Name */
+    .name{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      font-size:22px;
+      font-weight:600;
+      margin-bottom:4px;
+    }
+
+    /* Verified badge */
+    .verified{
+      background:#1d9bf0;
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:10px;
+      color:#fff;
+    }
+
+    .bio{
+      font-size:13px;
+      color:#9b9b9b;
+      margin-bottom:18px;
+    }
+
+    /* Button style presisi */
+    .btn{
+      width:100%;
+      background:#111;
+      border:1px solid #2b2b2b;
+      padding:14px 10px;
+      border-radius:12px;
+      margin:8px 0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:15px;
+      font-weight:500;
+      color:#eaeaea;
+      text-decoration:none;
+      transition:0.15s;
+      cursor:pointer;
+    }
+
+    .btn:hover{background:#1c1c1c;}
+
+    /* Hobi / Skill box (gantikan visitors) */
+    .skills{
+      margin-top:8px;
+      font-size:13px;
+      color:#aaa;
+    }
+
+    .skills span{
+      display:inline-block;
+      background:#151515;
+      border:1px solid #333;
+      padding:4px 10px;
+      border-radius:20px;
+      margin:3px;
+      font-size:11px;
+    }
+
+    footer{
+      margin-top:22px;
+      font-size:11px;
+      color:#444;
+    }
+
+    /* Modal Support */
+    .modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.85);
+      justify-content:center;
+      align-items:center;
+      z-index:999;
+    }
+
+    .modal-content{
+      background:#0f0f0f;
+      border:1px solid #2b2b2b;
+      padding:18px;
+      border-radius:14px;
+      width:90%;
+      max-width:320px;
+      text-align:center;
+    }
+
+    .modal img{
+      width:180px;
+      border-radius:10px;
+      margin:12px 0;
+    }
+
+    .close{
+      background:#1d9bf0;
+      border:none;
+      padding:8px 16px;
+      border-radius:8px;
+      color:white;
+      font-size:13px;
+      cursor:pointer;
+    }
+  </style></head>
+<body><div class="container">  <!-- Avatar -->  <div class="avatar-box">
+    <img class="avatar" src="https://files.catbox.moe/d9fhtz.jpg" />
+  </div>  <!-- Name + Verified -->  <div class="name">
+    <span>LELEKNOTDEV</span>
+    <span class="verified"><i class="fa-solid fa-check"></i></span>
+  </div>  <div class="bio">hi i'm AI Devloper</div>  <!-- Buttons --><a class="btn" href="#"><i class="fa-solid fa-plug"></i> Endpoint</a> <a class="btn" href="https://t.me/LELEKNOTDEV" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a> <a class="btn" href="https://wa.me/6282169945577" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+
+  <div class="btn" onclick="openSupport()"><i class="fa-solid fa-heart"></i> Support</div>  <!-- Hobi / Keahlian (ganti visitors) -->  <div class="skills">
+    Hobi / Keahlian:<br>
+    <span>HTML </span>
+    <span>JavaScript </span>
+    <span>Desain </span>
+  </div>  <footer>LELEKNOTDEV</footer>
+</div><!-- Modal Support / Donasi --><div class="modal" id="supportModal">
+  <div class="modal-content">
+    <h3>Support / Donasi</h3>
+    <p>Scan QRIS DANA SINI 👇</p>
+    <img src="https://files.catbox.moe/c9kzdg.jpg" />
+    <p>Nomor DANA:</p>
+    <b>Scan qiris ae mok</b>
+    <br><br>
+    <button class="close" onclick="closeSupport()">Tutup</button>
+  </div>
+</div><script>
+function openSupport(){document.getElementById('supportModal').style.display='flex';}
+function closeSupport(){document.getElementById('supportModal').style.display='none';}
+</script></body>
+</html>
